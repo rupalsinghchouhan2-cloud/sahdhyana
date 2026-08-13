@@ -1,0 +1,14 @@
+node_modules
+dist
+dist-ssr
+*.local
+.env
+.env.*
+!.env.example
+.DS_Store
+dev-dist
+
+# Generated binary assets — regenerate via npm run generate:icons / generate:sounds
+public/icons/*.png
+public/sounds/*.mp3
+

@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply antialiased;
+    color-scheme: light;
+  }
+  body {
+    @apply bg-ivory text-ink font-body;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% -10%, rgba(228, 239, 243, 0.5), transparent),
+      radial-gradient(ellipse 60% 40% at 80% 110%, rgba(246, 229, 232, 0.45), transparent);
+    background-attachment: fixed;
+    min-height: 100dvh;
+  }
+  ::selection {
+    @apply bg-sage-200 text-sage-900;
+  }
+  :focus-visible {
+    @apply outline-none ring-2 ring-sage-400 ring-offset-2 ring-offset-ivory rounded;
+  }
+  input, textarea {
+    @apply bg-cream;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-cream rounded-3xl shadow-soft border border-sand/60;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full font-semibold
+      transition-all duration-300 ease-out select-none
+      disabled:opacity-50 disabled:pointer-events-none;
+  }
+  .btn-primary {
+    @apply btn bg-sage-600 text-cream hover:bg-sage-700 active:scale-[0.98]
+      px-6 py-3 shadow-soft hover:shadow-lift;
+  }
+  .btn-secondary {
+    @apply btn bg-sand/70 text-ink hover:bg-sand px-6 py-3 active:scale-[0.98];
+  }
+  .btn-ghost {
+    @apply btn text-ink-soft hover:text-ink hover:bg-sand/50 px-4 py-2;
+  }
+  .input {
+    @apply w-full rounded-2xl border border-sand-deep/60 bg-cream px-4 py-3
+      text-ink placeholder:text-ink-faint focus:border-sage-400 transition-colors;
+  }
+  .label {
+    @apply block text-sm font-semibold text-ink-soft mb-1.5;
+  }
+  .heading-display {
+    @apply font-display font-medium tracking-tight text-ink;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.15s !important;
+  }
+}
