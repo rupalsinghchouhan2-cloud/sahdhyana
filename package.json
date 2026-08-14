@@ -5,12 +5,10 @@
   "type": "module",
   "description": "Sahadhyāna — sit together, wherever you are. A shared meditation sanctuary (PWA).",
   "scripts": {
-    "dev": "node scripts/run.mjs dev",
-    "build": "node scripts/run.mjs build",
-    "typecheck": "node scripts/run.mjs typecheck",
-    "preview": "node scripts/run.mjs preview",
-    "generate:icons": "node scripts/generate-icons.mjs",
-    "generate:sounds": "node scripts/generate-sounds.mjs",
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "typecheck": "tsc -b --noEmit",
+    "preview": "vite preview",
     "lint": "eslint ."
   },
   "dependencies": {
