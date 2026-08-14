@@ -8,7 +8,3 @@ dist-ssr
 .DS_Store
 dev-dist
 
-# Generated binary assets — regenerate via npm run generate:icons / generate:sounds
-public/icons/*.png
-public/sounds/*.mp3
-

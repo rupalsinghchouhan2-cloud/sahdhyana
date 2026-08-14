@@ -30,15 +30,12 @@ Sahadhyāna is a shared-meditation sanctuary: one person creates a room, shares 
 
 ```bash
 npm install
-npm run generate:icons    # builds PWA PNG icons from the vector lotus (needs sharp)
-npm run generate:sounds   # builds the UI sounds as MP3s (needs ffmpeg on PATH)
 cp .env.example .env      # fill in your Supabase values
 npm run dev
 ```
 
-The generated PNG icons and MP3 sounds are gitignored build artifacts — the two
-`generate:*` scripts recreate them losslessly from `public/icons/icon.svg` and a
-synthesizer definition, so the repository stays pure, reviewable source.
+The PWA icons (`public/icons/`) and UI sounds (`public/sounds/`) are committed
+to the repo, so a fresh clone runs immediately with no asset-generation step.
 
 ## Environment variables
 
